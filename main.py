@@ -4,11 +4,13 @@ from flask import request
 from flask import Response
 from analyser import RESPONSES
 
+
 app = Flask(__name__)
 
 TOKEN = "5458454629:AAHTr7Am8RJ71v2MsIxaviJHoGbB5OO7ucg"
-TELEGRAM_INIT_WEBHOOK_URL = 'https://api.telegram.org/bot{}/setWebhook?url=https://d9cf-82-80-173-170.eu.ngrok.io/message'\
-    .format(TOKEN)
+PORTS_URL = "https://2a02-82-80-173-170.eu.ngrok.io"
+TELEGRAM_INIT_WEBHOOK_URL = 'https://api.telegram.org/bot{}/setWebhook?url={}/message'\
+    .format(TOKEN, PORTS_URL)
 
 MESSAGE =""" Message """
 
