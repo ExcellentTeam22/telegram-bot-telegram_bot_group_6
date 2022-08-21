@@ -3,21 +3,22 @@ import requests
 from flask import request
 from flask import Response
 from analyser import RESPONSES
-
+from shazam import get_song_from_shazam
 
 app = Flask(__name__)
 
 TOKEN = "5458454629:AAHTr7Am8RJ71v2MsIxaviJHoGbB5OO7ucg"
 PORTS_URL = "https://2a02-82-80-173-170.eu.ngrok.io"
-TELEGRAM_INIT_WEBHOOK_URL = 'https://api.telegram.org/bot{}/setWebhook?url={}/message'\
+TELEGRAM_INIT_WEBHOOK_URL = 'https://api.telegram.org/bot{}/setWebhook?url={}/message' \
     .format(TOKEN, PORTS_URL)
 
-MESSAGE =""" Message """
+MESSAGE = """ Message """
 
 
 @app.route("/")
 def main():
     return MESSAGE
+
 
 @app.route("/message", methods=["POST"])
 def handle_message():
